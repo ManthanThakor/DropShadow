@@ -1,0 +1,185 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #303030;
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header p.intro-text {
+  font-size: 1.2rem;
+}
+
+.gallery-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 3rem;
+}
+
+.gallery-section h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #555;
+  font-weight: 600;
+}
+
+.image-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.image-container img {
+  width: 220px;
+  height: 222px;
+  object-fit: contain;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* Box Shadow Effect */
+.box-shadow img {
+  box-shadow: 0 0 20px #3d3d3d;
+}
+
+.box-shadow img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px #000;
+}
+
+/* Drop Shadow Effect */
+.drop-shadow img {
+  filter: drop-shadow(0 0 20px #3d3d3d);
+}
+
+.drop-shadow img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 30px #000);
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  animation: fadeIn 0.5s ease;
+}
+
+.modal-content {
+  display: block;
+  margin: auto;
+  max-width: 80%;
+  max-height: 80%;
+  animation: zoomIn 0.5s ease;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+}
+
+/* Infinite Animation for Modal */
+@keyframes zoomIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.modal-content {
+  animation: pulse 2s infinite;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  /* Sticking to the bottom */
+  margin-top: auto; /* Pushes footer to bottom */
+}
+
+/* Media Queries */
+@media (max-width: 1440px) {
+  .gallery-section {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+  .gallery-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-container img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .modal-content {
+    max-width: 90%;
+    max-height: 90%;
+  }
+}
